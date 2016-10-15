@@ -413,6 +413,21 @@
               <FileType>1</FileType>
               <FilePath>..\..\Common\Serial.c</FilePath>
             </File>
+            <File>
+              <FileName>Pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Common\Pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>I2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Common\I2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>Spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Common\Spi.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -437,6 +452,16 @@
               <FileName>N76E885_Datasheet_V1.00.pdf</FileName>
               <FileType>5</FileType>
               <FilePath>.\Documentation\N76E885_Datasheet_V1.00.pdf</FilePath>
+            </File>
+            <File>
+              <FileName>24LC64.pdf</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Documentation\24LC64.pdf</FilePath>
+            </File>
+            <File>
+              <FileName>NXP_I2C.pdf</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Documentation\NXP_I2C.pdf</FilePath>
             </File>
           </Files>
         </Group>
