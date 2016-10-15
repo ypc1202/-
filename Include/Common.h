@@ -11,6 +11,7 @@
 #include "Gpio.h"
 #include "Adc.h"
 #include "Serial.h"
+#include "Pwm.h"
 
 extern bit BIT_TMP;
 

@@ -177,79 +177,79 @@ void ADC_DIV_Select (UINT8 u8Adc_Div_Sel)
     switch(u8Adc_Div_Sel)
     {
         case ADC_DIV0:
-      {
-          clr_ADCDIV2;
-          clr_ADCDIV1;
-          clr_ADCDIV0;
-        }
-      break;
-      
-      case ADC_DIV1:
-      {
-          clr_ADCDIV2;
-          clr_ADCDIV1;
-          set_ADCDIV0;
-      }
-      break;
-      
-      case ADC_DIV2:      //Default
-      {
-          clr_ADCDIV2;
-          set_ADCDIV1;
-          clr_ADCDIV0;
-      }
-      break;
-      
-        case ADC_DIV3:
-      {
-          clr_ADCDIV2;
-          set_ADCDIV1;
-          set_ADCDIV0;
-        }
-      break;
-      
-        case ADC_DIV4:
-      {
-          clr_ADCDIV2;
-          clr_ADCDIV1;
-          set_ADCDIV0;
-      }
-      break;
-      
-        case ADC_DIV5:
-      {
-          set_ADCDIV2;
-          clr_ADCDIV1;
-          clr_ADCDIV0;
+        {
+            clr_ADCDIV2;
+            clr_ADCDIV1;
+            clr_ADCDIV0;
         }
         break;
       
-      case ADC_DIV6:
-      {
-          set_ADCDIV2;
-          clr_ADCDIV1;
-          set_ADCDIV0;
-      }
-      break;
+        case ADC_DIV1:
+        {
+            clr_ADCDIV2;
+            clr_ADCDIV1;
+            set_ADCDIV0;
+        }
+        break;
       
-      case ADC_DIV7:
-      {
-          set_ADCDIV2;
-          set_ADCDIV1;
-          clr_ADCDIV0;
-      }
-      break;
+        case ADC_DIV2:      //Default
+        {
+            clr_ADCDIV2;
+            set_ADCDIV1;
+            clr_ADCDIV0;
+        }
+        break;
+      
+        case ADC_DIV3:
+        {
+            clr_ADCDIV2;
+            set_ADCDIV1;
+            set_ADCDIV0;
+        }
+        break;
+      
+        case ADC_DIV4:
+        {
+            clr_ADCDIV2;
+            clr_ADCDIV1;
+            set_ADCDIV0;
+        }
+        break;
+      
+        case ADC_DIV5:
+        {
+            set_ADCDIV2;
+            clr_ADCDIV1;
+            clr_ADCDIV0;
+        }
+        break;
+      
+        case ADC_DIV6:
+        {
+            set_ADCDIV2;
+            clr_ADCDIV1;
+            set_ADCDIV0;
+        }
+        break;
+      
+        case ADC_DIV7:
+        {
+            set_ADCDIV2;
+            set_ADCDIV1;
+            clr_ADCDIV0;
+        }
+        break;
       
         case ADC_DIV8:
-      {
-          set_ADCDIV2;
-          set_ADCDIV1;
-          set_ADCDIV0;
+        {
+            set_ADCDIV2;
+            set_ADCDIV1;
+            set_ADCDIV0;
         }
-      break;
+        break;
 
-      default:
-      break;
+        default:
+        break;
     }
 }
 

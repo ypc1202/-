@@ -41,11 +41,11 @@ void startup_task (void) _task_ STARTUP_TASK
 {    
     demo_init();
 	
-	  init_semaphore(0, 1, 1);	
+	init_semaphore(0, 1, 1);	
 	
   	os_create_task (PHASE1);            /* start task PHASE1                    */
     os_create_task (PHASE2);            /* start task PHASE2                    */
-	  os_delete_task (STARTUP_TASK);      /* stop init task (no longer needed)    */
+    os_delete_task (STARTUP_TASK);      /* stop init task (no longer needed)    */
 }
 
 /******************************************************************************/
@@ -54,10 +54,10 @@ void startup_task (void) _task_ STARTUP_TASK
 void phase1 (void) _task_  PHASE1 
 {
     while (1)  
-		{                               /* endless loop */
-		    pend_semaphore(0);
-		    printf ("TASK # %d\n", (int)os_running_task_id ());  
-		    release_semaphore(0);
+	{                               /* endless loop */
+		 pend_semaphore(0);
+		 printf ("TASK # %d\n", (int)os_running_task_id ());  
+		 release_semaphore(0);
     }
 }
 
@@ -67,9 +67,9 @@ void phase1 (void) _task_  PHASE1
 void phase2 () _task_ PHASE2 
 {
     while (1)
-	  {                               /* endless loop */   
-		    pend_semaphore(0);
-		    printf ("TASK # %d\n", (int)os_running_task_id ());
-		    release_semaphore(0);
+	{                               /* endless loop */   
+		 pend_semaphore(0);
+		 printf ("TASK # %d\n", (int)os_running_task_id ());
+		 release_semaphore(0);
     }
 }
