@@ -1,4 +1,4 @@
-C51 COMPILER V9.54   SERIAL                                                                09/18/2016 22:39:27 PAGE 1   
+C51 COMPILER V9.54   SERIAL                                                                10/15/2016 23:15:47 PAGE 1   
 
 
 C51 COMPILER V9.54, COMPILATION OF MODULE SERIAL
@@ -62,7 +62,7 @@ line level    source
   44          //--------------------------------------------------------------------------------------------------------
              ----
   45          /* use timer1 as Baudrate generator, Maxmum Baudrate can 115200 bps @ 22.1184MHz
-C51 COMPILER V9.54   SERIAL                                                                09/18/2016 22:39:27 PAGE 2   
+C51 COMPILER V9.54   SERIAL                                                                10/15/2016 23:15:47 PAGE 2   
 
   46          */
   47          void InitialUART0_Timer1_Type2(UINT32 u32Baudrate)    //T1M = 0, SMOD = 1
@@ -126,7 +126,7 @@ line level    source
  103          void InitialUART0_Timer1_Type4(UINT32 u32Baudrate)    //T1M = 1, SMOD = 1
  104          {
  105   1          SCON = 0x52;     //UART0 Mode1,REN=1,TI=1
-C51 COMPILER V9.54   SERIAL                                                                09/18/2016 22:39:27 PAGE 3   
+C51 COMPILER V9.54   SERIAL                                                                10/15/2016 23:15:47 PAGE 3   
 
  106   1          TMOD |= 0x20;    //Timer1 Mode1
  107   1          
@@ -190,7 +190,7 @@ line level    source
               #endif    
  166   1      #ifdef FOSC_184320
                   RH3 = HIBYTE(65536 - (1152000/u32Baudrate)); /*18.4320 MHz */
-C51 COMPILER V9.54   SERIAL                                                                09/18/2016 22:39:27 PAGE 4   
+C51 COMPILER V9.54   SERIAL                                                                10/15/2016 23:15:47 PAGE 4   
 
                   RL3 = LOBYTE(65536 - (1152000/u32Baudrate)); /*18.4320 MHz */
               #endif
@@ -254,7 +254,7 @@ line level    source
  227           *
  228           *  Function Name: Send_Data_To_UART0()
  229           *
-C51 COMPILER V9.54   SERIAL                                                                09/18/2016 22:39:27 PAGE 5   
+C51 COMPILER V9.54   SERIAL                                                                10/15/2016 23:15:47 PAGE 5   
 
  230           *  Descriptions: Send SBUF of N76E885 to PC
  231           *
@@ -318,7 +318,7 @@ line level    source
  289           *
  290           *  Returns: None
  291           *
-C51 COMPILER V9.54   SERIAL                                                                09/18/2016 22:39:27 PAGE 6   
+C51 COMPILER V9.54   SERIAL                                                                10/15/2016 23:15:47 PAGE 6   
 
  292           **************************************************************************/
  293          void Send_Data_To_UART1 (UINT8 c)

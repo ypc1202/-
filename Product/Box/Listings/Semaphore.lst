@@ -1,4 +1,4 @@
-C51 COMPILER V9.54   SEMAPHORE                                                             09/18/2016 22:39:25 PAGE 1   
+C51 COMPILER V9.54   SEMAPHORE                                                             10/15/2016 23:15:46 PAGE 1   
 
 
 C51 COMPILER V9.54, COMPILATION OF MODULE SEMAPHORE
@@ -14,7 +14,7 @@ line level    source
    4          
    5          SEM_SET sem_tab[MAX_SEMAPHORES] = {0};
    6          
-   7          /* 初始化信号量 */
+   7          /* init semaphore */
    8          #pragma disable
    9          void init_semaphore(uint8_t sem_id, uint8_t max_count, uint8_t count)
   10          {
@@ -23,17 +23,17 @@ line level    source
   13   1          sem_tab[sem_id].pending_tasks = 0;
   14   1      }
   15          
-  16          /* 等待信号量 */
+  16          /* wait semaphore */
   17          #pragma disable
   18          char pend_sem(uint8_t sem_id)
   19          {
   20   1          if(sem_tab[sem_id].count > 0) 
   21   1          {
-  22   2              sem_tab[sem_id].count--;      /* 获取信号量 */
+  22   2              sem_tab[sem_id].count--;      /* get semaphore */
   23   2              return SEM_FAIL;
   24   2          }
   25   1              
-  26   1          /* 标记为等待状态 */
+  26   1          /* mark for waiting semaphore */
   27   1          sem_tab[sem_id].pending_tasks = (1 << os_running_task_id()); 
   28   1          
   29   1          return SEM_OK;
@@ -43,11 +43,11 @@ line level    source
   33          {
   34   1          if(pend_sem(sem_id) == 0)
   35   1          {
-  36   2              while(os_wait(K_TMO, 255, 0) != RDY_EVENT);    /* 等待，直到该任务就绪 */
+  36   2              while(os_wait(K_TMO, 255, 0) != RDY_EVENT);    /* waiting until the task is ready */
   37   2          }
   38   1      }
   39          
-  40          /* 释放信号量 */
+  40          /* release semaphore */
   41          #pragma disable
   42          char release_sem(uint8_t sem_id)
   43          {
@@ -56,13 +56,13 @@ line level    source
   46   1          
   47   1          if((sem_tab[sem_id].count > 0)||(sem_tab[sem_id].pending_tasks == 0))
   48   1          {
-  49   2              sem_tab[sem_id].count++; /* 释放信号量 */
+  49   2              sem_tab[sem_id].count++; /* release semaphore */
   50   2                  
   51   2              if(sem_tab[sem_id].count > sem_tab[sem_id].max_count)
   52   2              {
   53   3                  sem_tab[sem_id].count = sem_tab[sem_id].max_count;
   54   3              }
-C51 COMPILER V9.54   SEMAPHORE                                                             09/18/2016 22:39:25 PAGE 2   
+C51 COMPILER V9.54   SEMAPHORE                                                             10/15/2016 23:15:46 PAGE 2   
 
   55   2                      
   56   2              return SEM_FAIL;
@@ -72,10 +72,10 @@ line level    source
   60   1          {
   61   2              if(((sem_tab[sem_id].pending_tasks) & (temp)) != 0)
   62   2              {
-  63   3                  /* 查找任务表 */
+  63   3                  /* look out for tasklist*/
   64   3                  if(((sem_tab[sem_id].pending_tasks) & (~(1<<i))) != 0)
   65   3                  {                            
-  66   4                      return (i);                                     /* 返回等待信号量的任务号 */
+  66   4                      return (i);                                     /* return the task id waiting semaphore*/
   67   4                  }
   68   3              }
   69   2              temp <<= 1;
@@ -92,7 +92,7 @@ line level    source
   80   1          
   81   1          if(task_id != SEM_FAIL)
   82   1          {
-  83   2              os_set_ready(task_id);  /* 任务task_id进入就绪状态 */
+  83   2              os_set_ready(task_id);  /* task id is ready */
   84   2              os_switch_task();
   85   2          }
   86   1      }

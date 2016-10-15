@@ -7,6 +7,9 @@
 ".\Objects\Clock.obj",
 ".\Objects\Gpio.obj",
 ".\Objects\Serial.obj",
+".\Objects\Pwm.obj",
+".\Objects\I2c.obj",
+".\Objects\Spi.obj",
 ".\Objects\Conf_tny.obj" 
 TO ".\Objects\Box" Rtx51Tiny 
 PRINT(".\Listings\Box.m51") RAMSIZE(256) 

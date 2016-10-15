@@ -1,4 +1,4 @@
-C51 COMPILER V9.54   ADC                                                                   09/18/2016 22:39:26 PAGE 1   
+C51 COMPILER V9.54   ADC                                                                   10/15/2016 23:15:46 PAGE 1   
 
 
 C51 COMPILER V9.54, COMPILATION OF MODULE ADC
@@ -62,7 +62,7 @@ line level    source
   43          //      <0=> AIN0 (P00) <1=> AIN1 (P01) <2=> AIN2 (P02) <3=> AIN3 (P03)
   44          //      <4=> AIN4 (P04) <5=> AIN5 (P05) <6=> AIN6 (P06) <7=> AIN7 (P07)
   45          //      <8=> AIN8 (P26) <9=> AIN9 (P20) <10=> Band-Gap
-C51 COMPILER V9.54   ADC                                                                   09/18/2016 22:39:26 PAGE 2   
+C51 COMPILER V9.54   ADC                                                                   10/15/2016 23:15:46 PAGE 2   
 
   46          //
   47          // <o5.0..2> ADC Divider Selection 
@@ -126,7 +126,7 @@ line level    source
  105   2              {
  106   3                ADCCON0 = 0x03;                   //select ADC pin
  107   3                set_P0M1_3;                       //set ADC pin is input only mode
-C51 COMPILER V9.54   ADC                                                                   09/18/2016 22:39:26 PAGE 3   
+C51 COMPILER V9.54   ADC                                                                   10/15/2016 23:15:46 PAGE 3   
 
  108   3                clr_P0M2_3;
  109   3                set_P03DIDS;                      //disable digital connection
@@ -190,7 +190,7 @@ line level    source
  167   2              default:
  168   2                ADCCON0 |= 0x0F;                  //band-gap 1.25V
  169   2              break;
-C51 COMPILER V9.54   ADC                                                                   09/18/2016 22:39:26 PAGE 4   
+C51 COMPILER V9.54   ADC                                                                   10/15/2016 23:15:46 PAGE 4   
 
  170   2          }
  171   1      }
@@ -202,81 +202,81 @@ line level    source
  177   1          switch(u8Adc_Div_Sel)
  178   1          {
  179   2              case ADC_DIV0:
- 180   2            {
- 181   3                clr_ADCDIV2;
- 182   3                clr_ADCDIV1;
- 183   3                clr_ADCDIV0;
+ 180   2              {
+ 181   3                  clr_ADCDIV2;
+ 182   3                  clr_ADCDIV1;
+ 183   3                  clr_ADCDIV0;
  184   3              }
- 185   2            break;
+ 185   2              break;
  186   2            
- 187   2            case ADC_DIV1:
- 188   2            {
- 189   3                clr_ADCDIV2;
- 190   3                clr_ADCDIV1;
- 191   3                set_ADCDIV0;
- 192   3            }
- 193   2            break;
+ 187   2              case ADC_DIV1:
+ 188   2              {
+ 189   3                  clr_ADCDIV2;
+ 190   3                  clr_ADCDIV1;
+ 191   3                  set_ADCDIV0;
+ 192   3              }
+ 193   2              break;
  194   2            
- 195   2            case ADC_DIV2:      //Default
- 196   2            {
- 197   3                clr_ADCDIV2;
- 198   3                set_ADCDIV1;
- 199   3                clr_ADCDIV0;
- 200   3            }
- 201   2            break;
+ 195   2              case ADC_DIV2:      //Default
+ 196   2              {
+ 197   3                  clr_ADCDIV2;
+ 198   3                  set_ADCDIV1;
+ 199   3                  clr_ADCDIV0;
+ 200   3              }
+ 201   2              break;
  202   2            
  203   2              case ADC_DIV3:
- 204   2            {
- 205   3                clr_ADCDIV2;
- 206   3                set_ADCDIV1;
- 207   3                set_ADCDIV0;
+ 204   2              {
+ 205   3                  clr_ADCDIV2;
+ 206   3                  set_ADCDIV1;
+ 207   3                  set_ADCDIV0;
  208   3              }
- 209   2            break;
+ 209   2              break;
  210   2            
  211   2              case ADC_DIV4:
- 212   2            {
- 213   3                clr_ADCDIV2;
- 214   3                clr_ADCDIV1;
- 215   3                set_ADCDIV0;
- 216   3            }
- 217   2            break;
+ 212   2              {
+ 213   3                  clr_ADCDIV2;
+ 214   3                  clr_ADCDIV1;
+ 215   3                  set_ADCDIV0;
+ 216   3              }
+ 217   2              break;
  218   2            
  219   2              case ADC_DIV5:
- 220   2            {
- 221   3                set_ADCDIV2;
- 222   3                clr_ADCDIV1;
- 223   3                clr_ADCDIV0;
+ 220   2              {
+ 221   3                  set_ADCDIV2;
+ 222   3                  clr_ADCDIV1;
+ 223   3                  clr_ADCDIV0;
  224   3              }
  225   2              break;
  226   2            
- 227   2            case ADC_DIV6:
- 228   2            {
- 229   3                set_ADCDIV2;
- 230   3                clr_ADCDIV1;
- 231   3                set_ADCDIV0;
-C51 COMPILER V9.54   ADC                                                                   09/18/2016 22:39:26 PAGE 5   
+ 227   2              case ADC_DIV6:
+ 228   2              {
+ 229   3                  set_ADCDIV2;
+ 230   3                  clr_ADCDIV1;
+ 231   3                  set_ADCDIV0;
+C51 COMPILER V9.54   ADC                                                                   10/15/2016 23:15:46 PAGE 5   
 
- 232   3            }
- 233   2            break;
+ 232   3              }
+ 233   2              break;
  234   2            
- 235   2            case ADC_DIV7:
- 236   2            {
- 237   3                set_ADCDIV2;
- 238   3                set_ADCDIV1;
- 239   3                clr_ADCDIV0;
- 240   3            }
- 241   2            break;
+ 235   2              case ADC_DIV7:
+ 236   2              {
+ 237   3                  set_ADCDIV2;
+ 238   3                  set_ADCDIV1;
+ 239   3                  clr_ADCDIV0;
+ 240   3              }
+ 241   2              break;
  242   2            
  243   2              case ADC_DIV8:
- 244   2            {
- 245   3                set_ADCDIV2;
- 246   3                set_ADCDIV1;
- 247   3                set_ADCDIV0;
+ 244   2              {
+ 245   3                  set_ADCDIV2;
+ 246   3                  set_ADCDIV1;
+ 247   3                  set_ADCDIV0;
  248   3              }
- 249   2            break;
+ 249   2              break;
  250   2      
- 251   2            default:
- 252   2            break;
+ 251   2              default:
+ 252   2              break;
  253   2          }
  254   1      }
  255          

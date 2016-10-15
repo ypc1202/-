@@ -1,4 +1,4 @@
-C51 COMPILER V9.54   DELAY                                                                 09/18/2016 22:39:25 PAGE 1   
+C51 COMPILER V9.54   DELAY                                                                 10/15/2016 23:15:45 PAGE 1   
 
 
 C51 COMPILER V9.54, COMPILATION OF MODULE DELAY
@@ -62,7 +62,7 @@ line level    source
   45   1          
   46   1          for (u32CNT = 0; u32CNT < 0x0000FFFF; u32CNT++)
   47   1          {
-C51 COMPILER V9.54   DELAY                                                                 09/18/2016 22:39:25 PAGE 2   
+C51 COMPILER V9.54   DELAY                                                                 10/15/2016 23:15:45 PAGE 2   
 
   48   2              u32Tmp++;
   49   2          }
@@ -126,7 +126,7 @@ line level    source
  107   1          {
  108   2              RL3 = LOBYTE(TM3_VALUE_10us); 
  109   2              RH3 = HIBYTE(TM3_VALUE_10us);
-C51 COMPILER V9.54   DELAY                                                                 09/18/2016 22:39:25 PAGE 3   
+C51 COMPILER V9.54   DELAY                                                                 10/15/2016 23:15:45 PAGE 3   
 
  110   2              while ((T3CON&SET_BIT4) != SET_BIT4);//Check Timer3 Time-Out Flag
  111   2              clr_TF3;
@@ -190,7 +190,7 @@ line level    source
  169          {
  170   1          T3CON = 0x02;                           //Timer3 Clock = Fsys/4
  171   1          set_TR3;                                //Trigger Timer3
-C51 COMPILER V9.54   DELAY                                                                 09/18/2016 22:39:25 PAGE 4   
+C51 COMPILER V9.54   DELAY                                                                 10/15/2016 23:15:45 PAGE 4   
 
  172   1          while (u32CNT != 0)
  173   1          {
