@@ -12,6 +12,8 @@
 #include "Adc.h"
 #include "Serial.h"
 #include "Pwm.h"
+#include "I2c.h"
+#include "Spi.h"
 
 extern bit BIT_TMP;
 
